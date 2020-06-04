@@ -5,6 +5,8 @@ Boilerplate code to get started with [abelljs/abell](https://github.com/abelljs/
 ## Usage
 ```
 npx create-abell-app my-blog
+cd my-blog
+npm run dev
 ```
 
 *Note: `npx` command is by default available if you have NPM installed.*
