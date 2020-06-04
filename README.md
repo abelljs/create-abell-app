@@ -15,7 +15,7 @@ npx create-abell-app my-blog
 npx create-abell-app <blog-name> --template <template-github-url>
 ```
 
-`--tempate` flag and its value is optional and when not assigned, it will fallback to [abelljs/abell-starter-minima](https://github.com/abelljs/abell-starter-minima)
+`--tempate` flag is optional and when not assigned, it will fallback to https://github.com/abelljs/abell-starter-minima
 
 ---
 
