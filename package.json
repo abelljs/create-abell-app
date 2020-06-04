@@ -1,0 +1,26 @@
+{
+  "name": "create-abell-app",
+  "version": "0.0.1",
+  "description": "npx create-abell-app my-blog",
+  "main": "./cli.js",
+  "bin": {
+    "create-abell-app": "./cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abelljs/create-abell-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abelljs/create-abell-app/issues"
+  },
+  "homepage": "https://github.com/abelljs/create-abell-app#readme"
+}
