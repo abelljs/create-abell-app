@@ -3,7 +3,9 @@
 <template>
   <nav id="topnav">
     <div class="brand-container display-inline-block font-secondary">
-      <a href="{{$root}}" id="brand"><img src="{{$root}}/static-assets/logo.svg" width="30"/></a>
+      <a href="{{$root}}" id="brand">
+        <img alt="Abell Logo" src="{{$root}}/static-assets/images/logo.svg" width="30"/>
+      </a>
     </div>
     <div class="right-items">
       <a href="{{$root}}" class="nav-item">Home</a>
@@ -12,7 +14,13 @@
   </nav>
 </template>
 
-<style>
+<!-- 
+  'inlined' attribute on script or style, adds the content to the html 
+  inside style or script tag.
+
+  With this you can load critical style/scripts faster.
+-->
+<style inlined>
   nav#topnav {
     padding: 0px 150px;
     background-color: #f5f5f5;
@@ -48,7 +56,7 @@
   }
 
   nav#topnav .nav-item:hover {
-    color: #555;
+    color: var(--primary);
     transition: color .3s ease;
   }
 

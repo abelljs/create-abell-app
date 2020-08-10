@@ -1,12 +1,17 @@
 {{
-  const { globalMeta, meta, importContent } = Abell;
+  const { globalMeta, meta, importContent, $root } = Abell;
 }}
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <link rel="icon" href="{{$root}}/static-assets/images/favicon.ico"/>
+  <link rel="stylesheet" href="{{$root}}/static-assets/styles.css"/>
+
   <title>{{ meta.title }} - {{ globalMeta.title }}</title>
 </head>
 <body>
-  <main class="blog-content">
+  <main class="blog-content container">
   {{ importContent(`${meta.$path}/index.md`) }}
   </main>
 </body>

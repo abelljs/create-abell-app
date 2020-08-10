@@ -2,31 +2,32 @@
   const { globalMeta, contentArray, $root } = Abell;
 
   const Navbar = require('./components/Navbar.abell');
+  const BlogsList = require('./components/BlogsList.abell');
+  const Footer = require('./components/Footer.abell');
 }}
-<html>
+<html lang="en">
 <head>
-  <title>{{globalMeta.title}}</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{$root}}/static-assets/images/favicon.ico"/>
   <link rel="stylesheet" href="{{$root}}/static-assets/styles.css"/>
+  
+  <title>{{globalMeta.title}}</title>
 </head>
 <body>
   <Navbar props={brand: globalMeta.title} />
   <main>
-    <section id="home">
-      Abell Default Template
+    <!-- Top Content -->
+    <section class="container text-center" id="home">
+      <img alt="Abell Logo" width="200" src="{{$root}}/static-assets/images/logo.svg"/>
+      <h1>Abell Default Template</h1>
+      <a target="_blank" style="margin-right: 14px;" href="https://abelljs.org/">Docs &#8599;</a>
+      <a target="_blank" href="https://github.com/abelljs/abell">GitHub &#8599;</a>
     </section>
-    <section id="blogs">
-      <h2>Blogs</h2>
-      {{
-        contentArray.map(meta => /* html */`
-        <div>
-          <h2>${meta.title}</h2>
-          <p>${meta.description}</p>
-        </div>
-        `);
-      }}
-    </section>
+
+    <!-- List of blogs -->
+    <BlogsList props={contentArray} />
   </main>
-  <footer></footer>  
+  <Footer />
 </body>
 </html>

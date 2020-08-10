@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
+:root {
+  --primary: #09239d
+}
 html, body {
   margin: 0px;
   color: #111;
@@ -12,4 +14,27 @@ html, body {
 
 a {
   text-decoration: none;
+  color: var(--primary);
+}
+
+.container {
+  padding: 100px 200px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 20px;
+  }
 }
