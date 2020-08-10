@@ -1,0 +1,32 @@
+{{
+  const { globalMeta, contentArray, $root } = Abell;
+
+  const Navbar = require('./components/Navbar.abell');
+}}
+<html>
+<head>
+  <title>{{globalMeta.title}}</title>
+
+  <link rel="stylesheet" href="{{$root}}/static-assets/styles.css"/>
+</head>
+<body>
+  <Navbar props={brand: globalMeta.title} />
+  <main>
+    <section id="home">
+      Abell Default Template
+    </section>
+    <section id="blogs">
+      <h2>Blogs</h2>
+      {{
+        contentArray.map(meta => /* html */`
+        <div>
+          <h2>${meta.title}</h2>
+          <p>${meta.description}</p>
+        </div>
+        `);
+      }}
+    </section>
+  </main>
+  <footer></footer>  
+</body>
+</html>

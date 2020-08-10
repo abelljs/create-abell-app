@@ -1,0 +1,61 @@
+<AbellComponent>
+{{ const { brand, $root } = props; }}
+<template>
+  <nav id="topnav">
+    <div class="brand-container display-inline-block font-secondary">
+      <a href="{{$root}}" id="brand"><img src="{{$root}}/static-assets/logo.svg" width="30"/></a>
+    </div>
+    <div class="right-items">
+      <a href="{{$root}}" class="nav-item">Home</a>
+      <a href="{{$root}}#blogs" class="nav-item">Blogs</a>
+    </div>
+  </nav>
+</template>
+
+<style>
+  nav#topnav {
+    padding: 0px 150px;
+    background-color: #f5f5f5;
+    display: flex;
+    width: 100%;
+    color: #111;
+  }
+
+  nav#topnav .brand-container {
+    flex: 1;
+    padding: 24px 20px;
+  }
+
+  nav#topnav #brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #111;
+  }
+ 
+  nav#topnav .right-items {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  nav#topnav .nav-item {
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    color: #111;
+    transition: color .3s ease;
+  }
+
+  nav#topnav .nav-item:hover {
+    color: #555;
+    transition: color .3s ease;
+  }
+
+  @media (max-width: 768px) {
+    nav#topnav {
+      padding: 0px 10px;
+    }
+  }
+</style>
+</AbellComponent>

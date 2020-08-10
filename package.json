@@ -4,7 +4,7 @@
   "description": "Boilerplate for abell app. npx create-abell-app my-blog",
   "main": "./cli.js",
   "bin": {
-    "create-abell-app": "./cli.js"
+    "create-abell-app": "bin/create-abell-app.js"
   },
   "directories": {
     "test": "test"
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/abelljs/create-abell-app/issues"
   },
-  "homepage": "https://github.com/abelljs/create-abell-app#readme"
+  "homepage": "https://github.com/abelljs/create-abell-app#readme",
+  "dependencies": {
+    "prompts": "^2.3.2"
+  }
 }

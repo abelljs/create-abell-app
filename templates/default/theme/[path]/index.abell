@@ -1,0 +1,13 @@
+{{
+  const { globalMeta, meta, importContent } = Abell;
+}}
+<html>
+<head>
+  <title>{{ meta.title }} - {{ globalMeta.title }}</title>
+</head>
+<body>
+  <main class="blog-content">
+  {{ importContent(`${meta.$path}/index.md`) }}
+  </main>
+</body>
+</html>
