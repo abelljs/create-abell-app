@@ -7,53 +7,12 @@ const path = require('path');
 const prompts = require('prompts');
 
 const {
-  valueOf, 
   copyFolderSync,
   rmdirRecursiveSync, 
   colors
 } = require('../lib/helpers.js');
 
-function getTemplate() {
-  let template = valueOf('--template');
-  if (!template) {
-    return 'default';
-  }
-
-  if (!template.startsWith('https://github.com/')) {
-    // If template value is `abelljs/abell-starter-portfolio`, add https://github.com before it.
-    template = 'https://github.com/' + template;
-  }
-
-  return template;
-}
-
-async function getInstaller() {
-  let installCommand = 'npm install';
-
-  if (!valueOf('--installer')) {
-    const answers = await prompts({
-      type: 'select',
-      message: 'Select Installer',
-      name: 'installCommand',
-      choices: [
-        {
-          title: 'npm',
-          value: 'npm install'
-        },
-        {
-          title: 'yarn',
-          value: 'yarn'
-        }
-      ]
-    })
-
-    installCommand = answers.installCommand;
-  } else {
-    installCommand = valueOf('--installer');
-  }
-
-  return installCommand;
-}
+const { getInstaller, getTemplate } = require('../lib/create-utils.js');
 
 async function createAbellApp(directoryName) {
 
@@ -64,13 +23,13 @@ async function createAbellApp(directoryName) {
     stdio: [0, 1, 2]
   }
   
-  if (template === 'default') {
+  if (template === 'default' || template === 'minimal') {
     // copy default template from templates/default
     const templatesDir = path.join(__dirname, '..', 'templates')
     copyFolderSync(
-      path.join(templatesDir, 'default'), 
+      path.join(templatesDir, template), 
       directoryName, 
-      [path.join(templatesDir, 'default', 'node_modules')]
+      [path.join(templatesDir, template, 'node_modules')]
     )
   } else {
     // Execute git clone

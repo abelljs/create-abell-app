@@ -2,7 +2,7 @@
   "name": "create-abell-app",
   "version": "0.0.2-rc.1",
   "description": "Boilerplate for abell app. npx create-abell-app my-blog",
-  "main": "./cli.js",
+  "main": "bin/create-abell-app.js",
   "bin": {
     "create-abell-app": "bin/create-abell-app.js"
   },

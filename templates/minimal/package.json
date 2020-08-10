@@ -1,0 +1,17 @@
+{
+  "name": "minimal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "abell.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "abell serve",
+    "build": "abell build"
+  },
+  "keywords": [],
+  "author": "abelljs",
+  "license": "MIT",
+  "devDependencies": {
+    "abell": "^0.4.0-rc.5"
+  }
+}
