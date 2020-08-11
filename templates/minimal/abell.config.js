@@ -1,3 +1,6 @@
 module.exports = {
-  themePath: 'theme'
+  themePath: 'theme',
+  globalMeta: {
+    siteTitle: 'My Portfolio'
+  }
 }

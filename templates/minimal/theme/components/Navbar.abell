@@ -1,0 +1,38 @@
+<AbellComponent>
+{{ const { $root, brand } = props; }}
+
+<template>
+  <nav id="top-nav">
+    <span class="brand">{{ brand }}</span>
+    <span class="links">
+      <a href="{{$root}}">Home</a>
+      <a href="{{$root}}#about">About</a>
+      <a href="{{$root}}#blogs">Blogs</a>
+    </span>
+    <span class="counter">0</span>
+  </nav>
+</template>
+
+<style>
+  nav#top-nav {
+    padding: 10px;
+    background-color: #ddd;
+  }
+
+  nav#top-nav a {
+    text-decoration: none;
+  }
+
+  nav#top-nav .brand {
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  // Client-side JavaScript code goes here!
+  let i = 0;
+  setInterval(() => {
+    document.querySelector('nav#top-nav .counter').innerText = ++i
+  }, 1000)
+</script>
+</AbellComponent>

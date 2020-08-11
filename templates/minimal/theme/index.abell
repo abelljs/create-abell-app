@@ -1,9 +1,17 @@
 {{
-  const a = 1;
-  const b = 9;
+  const { globalMeta, $root } = Abell; // JavaScript Destructuring
+
+  const Navbar = require('./components/Navbar.abell');
 }}
+
 <html>
+  <head>
+    <title>{{ globalMeta.siteTitle }}</title>
+  </head>
   <body>
-    {{ a + b }}
+    <Navbar props={brand: globalMeta.siteTitle, $root: $root} />
+    <main>
+      <h1>{{ globalMeta.siteTitle }}</h1>
+    </main>
   </body>
 </html>
