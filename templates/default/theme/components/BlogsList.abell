@@ -6,7 +6,7 @@
     {{
       contentArray.map(meta => /* html */`
       <article>
-        <a href="${meta.$path}/"><h3>${meta.title}</h3></a>
+        <h3><a href="${meta.$path}/">${meta.title}</a></h3>
         <p class="createdat-date">${meta.$createdAt.toDateString()}</p>
         <p class="description">${meta.description}</p>
       </article>

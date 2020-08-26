@@ -30,7 +30,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+code {
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
