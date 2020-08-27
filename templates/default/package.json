@@ -12,6 +12,6 @@
   "author": "abelljs",
   "license": "MIT",
   "devDependencies": {
-    "abell": "^0.4.0"
+    "abell": "^0.5.0"
   }
 }

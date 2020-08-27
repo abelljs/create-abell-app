@@ -1,6 +1,6 @@
 {
   "name": "create-abell-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Boilerplate for abell app. npx create-abell-app my-blog",
   "main": "bin/create-abell-app.js",
   "bin": {
@@ -16,7 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/abelljs/create-abell-app.git"
   },
-  "keywords": ["abell"],
+  "keywords": [
+    "abell"
+  ],
   "author": "saurabhdaware",
   "license": "MIT",
   "bugs": {
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/abelljs/create-abell-app#readme",
   "dependencies": {
+    "commander": "^6.0.0",
     "prompts": "^2.3.2"
   }
 }

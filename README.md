@@ -19,6 +19,18 @@ npx create-abell-app <blog-name> --template <template-github-url>
 
 `--tempate` flag is optional and when not assigned, it will fallback to https://github.com/abelljs/abell-starter-minima
 
+
+## Contributing
+
+Fork this repository
+```
+git clone https://github.com/<your-github-username>/create-abell-app
+cd create-abell-app
+npm link
+```
+
+After `npm link`, you will get access to `create-abell-app` command in your terminal. You can then use `create-abell-app my-blog` to create project.
+
 ---
 
 [<img alt="Buy me a Coffee Button" width=200 src="https://c5.patreon.com/external/logo/become_a_patron_button.png">](https://www.patreon.com/bePatron?u=31891872) &nbsp; [<img alt="Buy me a Coffee Button" width=200 src="https://cdn.buymeacoffee.com/buttons/default-yellow.png">](https://www.buymeacoffee.com/saurabhdaware)
