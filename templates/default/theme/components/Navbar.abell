@@ -5,6 +5,7 @@
     <div class="brand-container display-inline-block font-secondary">
       <a href="{{$root}}" id="brand">
         <img alt="Abell Logo" src="{{$root}}/static-assets/images/logo.svg" width="30"/>
+        <span class="brand-name">{{ props.shortName }}</span>
       </a>
     </div>
     <div class="right-items">
@@ -14,14 +15,17 @@
   </nav>
 </template>
 
-<!-- 
-  'inlined' attribute on script or style, adds the content to the html 
+<!--
+  1. Styles are scoped by default.
+  You can use 'global' to remove the scope
+
+  2. 'inlined' attribute on script or style, adds the content to the html 
   inside style or script tag.
 
   With this you can load critical style/scripts faster.
 -->
 <style inlined>
-  nav#topnav {
+  nav {
     padding: 0px 150px;
     background-color: #f5f5f5;
     display: flex;
@@ -29,25 +33,29 @@
     color: #111;
   }
 
-  nav#topnav .brand-container {
+  nav .brand-container {
     flex: 1;
     padding: 24px 20px;
   }
 
-  nav#topnav #brand {
-    font-weight: bold;
-    font-size: 1.3rem;
+  nav .brand-name {
     color: #111;
+    font-size: 1rem;
+    position: relative;
+    padding: 0px 4px;
+    font-weight: bold;
+    top: -8px;
+    display: inline;
   }
  
-  nav#topnav .right-items {
+  nav .right-items {
     display: flex;
     align-items: baseline;
     justify-content: center;
     align-items: stretch;
   }
 
-  nav#topnav .nav-item {
+  nav .nav-item {
     padding: 30px 20px;
     font-size: 0.9rem;
     display: inline-block;
@@ -55,13 +63,13 @@
     transition: color .3s ease;
   }
 
-  nav#topnav .nav-item:hover {
+  nav .nav-item:hover {
     color: var(--primary);
     transition: color .3s ease;
   }
 
   @media (max-width: 768px) {
-    nav#topnav {
+    nav {
       padding: 0px 10px;
     }
   }

@@ -1,6 +1,10 @@
 {{
   const { globalMeta, meta, importContent, $root } = Abell;
+  
+  const Navbar = require('../components/Navbar.abell')
+  const Footer = require('../components/Footer.abell')
 }}
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,8 +15,13 @@
   <title>{{ meta.title }} - {{ globalMeta.title }}</title>
 </head>
 <body>
+  <Navbar props={
+    shortName: globalMeta.shortName,
+    $root
+  } />
   <main class="blog-content container">
   {{ importContent(`${meta.$path}/index.md`) }}
   </main>
+  <Footer/>
 </body>
 </html>

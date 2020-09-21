@@ -16,22 +16,22 @@
 </template>
 
 <style>
-  #blogs article {
+  article {
     padding: 8px 0px;
     margin: 13px 0px;
   }
 
-  #blogs article h3 {
+  article h3 {
     margin: 5px 0px;
     font-size: 1.4rem;
   }
 
-  #blogs article .createdat-date {
+  article .createdat-date {
     font-size: 0.9rem;
     margin: 10px 0px;
   }
 
-  #blogs article .description {
+  article .description {
     margin: 0px 0px;
   }
 </style>

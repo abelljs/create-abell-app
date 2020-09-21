@@ -13,21 +13,25 @@
   </nav>
 </template>
 
+<!--
+  styles are scoped for a component by default.
+-->
 <style>
-  nav#top-nav {
+  nav {
     padding: 10px;
     background-color: #ddd;
   }
 
-  nav#top-nav a {
+  nav a {
     text-decoration: none;
   }
 
-  nav#top-nav .brand {
+  nav .brand {
     font-weight: bold;
   }
 </style>
 
+<!-- scripts are not scoped -->
 <script>
   // Client-side JavaScript code goes here!
   let i = 0;

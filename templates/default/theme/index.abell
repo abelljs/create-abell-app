@@ -12,15 +12,19 @@
   <link rel="icon" href="{{$root}}/static-assets/images/favicon.ico"/>
   <link rel="stylesheet" href="{{$root}}/static-assets/styles.css"/>
   
-  <title>{{globalMeta.title}}</title>
+  <title>{{ globalMeta.title }}</title>
 </head>
 <body>
-  <Navbar props={brand: globalMeta.title} />
+  <Navbar props={
+    shortName: globalMeta.shortName,
+    $root
+  } />
   <main>
+  
     <!-- Top Content -->
     <section class="container text-center" id="home">
       <img alt="Abell Logo" width="200" src="{{$root}}/static-assets/images/logo.svg"/>
-      <h1>Abell Default Template</h1>
+      <h1>{{ globalMeta.title }}</h1>
       <a target="_blank" style="margin-right: 14px;" href="https://abelljs.org/">Docs &#8599;</a>
       <a target="_blank" href="https://github.com/abelljs/abell">GitHub &#8599;</a>
     </section>

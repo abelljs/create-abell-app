@@ -18,6 +18,7 @@
   }
 </style>
 
+<!-- scripts are not scoped. Refer them with id or with respect to the id of parent -->
 <script>
   document.querySelector('#footer-year').innerText = new Date().getFullYear();
 </script>
