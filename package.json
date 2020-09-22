@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive \"./tests/*.spec.js\" --timeout 300000"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,9 @@
   "dependencies": {
     "commander": "^6.0.0",
     "prompts": "^2.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
   }
 }
