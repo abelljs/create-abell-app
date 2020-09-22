@@ -55,7 +55,7 @@ program
     } else {
       // Execute git clone
       console.log(`\n${colors.green('>')} Fetching Template from GitHub ✨\n\n`);
-      execSync(`git clone ${template} ${projectName}`, execOptions)
+      execSync(`git clone ${template} ${projectName}`)
     }
 
     // remove package-lock.json if preferred installer is yarn
@@ -74,6 +74,8 @@ program
     console.log(`\n${colors.green('>')} Finished Installing Dependencies 🤠`);
     console.log(`${colors.green('>')} Successfully Created ${projectName} 🚀`);
     console.log(`\n${colors.green('>>')} \`cd ${projectName}\` and \`${installCommand === 'yarn' ? 'yarn' : 'npm run'} dev\` to run dev-server ✨\n\n`);
+    // Exit
+    process.exit(-1);
   });
 
 
