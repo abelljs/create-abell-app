@@ -74,6 +74,11 @@ describe('create-abell-app command', () => {
       const packageJSON = require(path.join(basePath, 'my-test-blog', 'package.json'))
       expect(packageJSON.name).to.equal('my-test-blog');
     })
+
+    it('should not have .git file', () => {
+      const doesGitHistoryExists = fs.existsSync(path.join(basePath, 'my-remote-test-blog', '.git'));
+      expect(doesGitHistoryExists).to.equal(false);
+    })
   })
 
   describe('remote template', () => {
