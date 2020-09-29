@@ -69,6 +69,11 @@ describe('create-abell-app command', () => {
     ]
 
     expectTheseFilesToExist(checkForFiles);
+
+    it('should have a given name in package.json name field', () => {
+      const packageJSON = require(path.join(basePath, 'my-test-blog', 'package.json'))
+      expect(packageJSON.name).to.equal('my-test-blog');
+    })
   })
 
   describe('remote template', () => {
