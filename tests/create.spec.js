@@ -80,7 +80,7 @@ describe('create-abell-app command', () => {
     before(async () => {
       await runCreateAbellApp({
         projectName: 'my-remote-test-blog',
-        installer: 'npm',
+        installer: 'yarn',
         template: 'abelljs/abell-default-starter'
       });
     })
@@ -89,6 +89,7 @@ describe('create-abell-app command', () => {
       path.join(basePath, 'my-remote-test-blog', 'theme', 'index.abell'),
       path.join(basePath, 'my-remote-test-blog', 'theme', 'components'),
       path.join(basePath, 'my-remote-test-blog', 'abell.config.js'),
+      path.join(basePath, 'my-remote-test-blog', 'yarn.lock'),
       path.join(basePath, 'my-remote-test-blog', 'node_modules', 'abell'),
       path.join(basePath, 'my-remote-test-blog', '.gitignore')
     ]
