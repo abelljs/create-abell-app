@@ -5,4 +5,4 @@ module.exports = {
     title: 'Abell Default Template',
     shortName: 'Abell'
   }
-}
+};
