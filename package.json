@@ -12,7 +12,8 @@
   "scripts": {
     "test": "mocha --recursive \"./tests/*.spec.js\" --timeout 300000",
     "eslint": "eslint .",
-    "prettier": "prettier --write \"**/*.js\""
+    "prettier": "prettier --write \"**/*.js\"",
+    "prepublishOnly": "npm run eslint && npm test"
   },
   "repository": {
     "type": "git",
