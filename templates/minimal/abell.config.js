@@ -3,4 +3,4 @@ module.exports = {
   globalMeta: {
     siteTitle: 'My Portfolio'
   }
-}
+};
