@@ -2,3 +2,5 @@
 **/**/node_modules/
 local/
 .vscode/
+.eslintrc.js
+.prettierrc
