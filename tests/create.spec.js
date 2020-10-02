@@ -5,7 +5,7 @@ const { spawn } = require('child_process');
 const expect = require('chai').expect;
 const { createPathIfAbsent, rmdirRecursiveSync } = require('../lib/utils.js');
 
-const basePath = path.join(__dirname, 'resources');
+const basePath = path.join(__dirname, 'temp-project');
 
 /**
  * Runs create-abell-app command

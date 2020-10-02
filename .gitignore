@@ -105,3 +105,4 @@ dist
 
 local/
 .vscode/
+tests/temp-project
