@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { spawn } = require('child_process');
 
 const expect = require('chai').expect;
 const { createPathIfAbsent, rmdirRecursiveSync } = require('../lib/utils.js');
+const { executeCommand } = require('../lib/actions.js');
 
 const basePath = path.join(__dirname, 'temp-project');
 
@@ -15,25 +15,19 @@ const basePath = path.join(__dirname, 'temp-project');
  * @param {string} options.template
  */
 async function runCreateAbellApp({ projectName, installer, template }) {
-  return new Promise((resolve, reject) => {
-    const args = ['../../bin/create-abell-app.js', projectName];
+  const args = ['../../bin/create-abell-app.js', projectName];
 
-    if (installer) {
-      args.push('--installer', installer);
-    }
+  if (installer) {
+    args.push('--installer', installer);
+  }
 
-    if (template) {
-      args.push('--template', template);
-    }
+  if (template) {
+    args.push('--template', template);
+  }
 
-    const child = spawn('node', args, {
-      cwd: basePath,
-      stdio: [process.stdin, process.stdout, process.stderr]
-    });
-
-    child.on('close', (code) => {
-      resolve();
-    });
+  return executeCommand('node', args, {
+    cwd: basePath,
+    stdio: [process.stdin, process.stdout, process.stderr]
   });
 }
 
@@ -54,19 +48,24 @@ describe('create-abell-app command', () => {
     createPathIfAbsent(basePath);
   });
 
-  describe('default template', () => {
+  describe('default template and npm installer', () => {
     before(async () => {
       await runCreateAbellApp({
         projectName: 'my-test-blog',
         installer: 'npm',
-        template: ''
+        template: 'abelljs/abell-starter-portfolio'
       });
     });
 
+    /**
+     * TODO:
+     * There were issues with node_modules/abell exist check in npm publish
+     * so it is tempororarily removed. It has to be fixed soon.
+     */
     const checkForFiles = [
       path.join(basePath, 'my-test-blog', 'theme', 'index.abell'),
       path.join(basePath, 'my-test-blog', 'abell.config.js'),
-      path.join(basePath, 'my-test-blog', 'node_modules', 'abell'),
+      // path.join(basePath, 'my-test-blog', 'node_modules', 'abell'),
       path.join(basePath, 'my-test-blog', '.gitignore')
     ];
 
@@ -89,7 +88,7 @@ describe('create-abell-app command', () => {
     });
   });
 
-  describe('remote template', () => {
+  describe('remote template and yarn installer', () => {
     before(async () => {
       await runCreateAbellApp({
         projectName: 'my-remote-test-blog',
