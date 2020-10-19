@@ -4,3 +4,4 @@ local/
 .vscode/
 .eslintrc.js
 .prettierrc
+tests/
