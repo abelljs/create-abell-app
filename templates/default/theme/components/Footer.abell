@@ -1,7 +1,7 @@
 <AbellComponent>
 <template>
   <footer>
-    &#169; <a href="https://abelljs.org/">Abell</a> <span id="footer-year"></span>
+    &#169; <a href="https://abelljs.org/">Abell</a> <span class="year"></span>
   </footer>
 </template>
 
@@ -18,8 +18,17 @@
   }
 </style>
 
-<!-- scripts are not scoped. Refer them with id or with respect to the id of parent -->
+<!--
+
+Script tag contains vanilla JavaScript with one difference.
+
+document.querySelector is replaced with `scopedSelector`
+document.querySelectorAll is replaced with `scopedSelectorAll`
+
+This ensures the selected element is from the same component.
+
+-->
 <script>
-  document.querySelector('#footer-year').innerText = new Date().getFullYear();
+  scopedSelector('footer .year').innerText = new Date().getFullYear();
 </script>
 </AbellComponent>

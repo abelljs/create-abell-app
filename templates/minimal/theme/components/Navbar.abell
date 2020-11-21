@@ -2,7 +2,7 @@
 {{ const { $root, brand } = props; }}
 
 <template>
-  <nav id="top-nav">
+  <nav>
     <span class="brand">{{ brand }}</span>
     <span class="links">
       <a href="{{$root}}">Home</a>
@@ -31,12 +31,21 @@
   }
 </style>
 
-<!-- scripts are not scoped -->
+<!--
+
+Script tag contains vanilla JavaScript with one difference.
+
+document.querySelector is replaced with `scopedSelector`
+document.querySelectorAll is replaced with `scopedSelectorAll`
+
+This ensures the selected element is from the same component.
+
+-->
 <script>
   // Client-side JavaScript code goes here!
   let i = 0;
   setInterval(() => {
-    document.querySelector('nav#top-nav .counter').innerText = ++i
+    scopedSelector('nav .counter').innerText = ++i
   }, 1000)
 </script>
 </AbellComponent>
