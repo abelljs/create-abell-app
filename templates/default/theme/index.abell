@@ -9,8 +9,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="{{$root}}/static-assets/images/favicon.ico"/>
-  <link rel="stylesheet" href="{{$root}}/static-assets/styles.css"/>
+  <link rel="icon" href="{{ $root }}/static-assets/images/favicon.ico"/>
+  <link rel="stylesheet" href="{{ $root }}/static-assets/styles.css"/>
   
   <title>{{ globalMeta.title }}</title>
 </head>
@@ -23,13 +23,17 @@
   
     <!-- Top Content -->
     <section class="container text-center" id="home">
-      <img alt="Abell Logo" width="200" src="{{$root}}/static-assets/images/logo.svg"/>
+      <img alt="Abell Logo" width="200" src="{{ $root }}/static-assets/images/logo.svg"/>
       <h1>{{ globalMeta.title }}</h1>
-      <a target="_blank" style="margin-right: 14px;" href="https://abelljs.org/">Docs &#8599;</a>
-      <a target="_blank" href="https://github.com/abelljs/abell">GitHub &#8599;</a>
+      <a target="_blank" style="margin-right: 14px;" href="https://abelljs.org/">Docs</a>
+      <a target="_blank" href="https://github.com/abelljs/abell">GitHub</a>
     </section>
 
     <!-- List of blogs -->
+    {{ 
+      // Uncomment next line to see all the blog data in terminal
+      // console.log(Abell) 
+    }}
     <BlogsList props={contentArray} />
   </main>
   <Footer />

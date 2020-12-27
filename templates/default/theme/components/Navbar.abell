@@ -33,6 +33,10 @@
     color: #111;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   nav .brand-container {
     flex: 1;
     padding: 24px 20px;
