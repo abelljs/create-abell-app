@@ -1,7 +1,5 @@
 {{
-  const { globalMeta, $root } = Abell; // JavaScript Destructuring
-
-  const Navbar = require('./components/Navbar.abell');
+  const { globalMeta, $root } = Abell;
 }}
 
 <html>
@@ -9,9 +7,14 @@
     <title>{{ globalMeta.siteTitle }}</title>
   </head>
   <body>
-    <Navbar props={brand: globalMeta.siteTitle, $root: $root} />
+    {{
+      // Uncomment Next Line to log Abell variable on terminal
+      // console.log(Abell)
+    }}
+
     <main>
-      <h1>{{ globalMeta.siteTitle }}</h1>
+      <!-- Abell.globalMeta comes from `./abell.config.js` file -->
+      <h1>Hello, {{ globalMeta.siteTitle }}!</h1>
     </main>
   </body>
 </html>
