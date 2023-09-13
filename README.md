@@ -1,5 +1,9 @@
 # create-abell-app
 
+> **Warning**
+>
+> This package is moved to [abelljs/abell/packages/create-abell](https://github.com/abelljs/abell/tree/main/packages/create-abell)
+
 Boilerplate code to get started with [abelljs/abell](https://github.com/abelljs/abell)
 
 ## Usage
